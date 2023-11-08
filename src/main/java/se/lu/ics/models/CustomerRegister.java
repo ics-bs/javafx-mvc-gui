@@ -69,6 +69,4 @@ public class CustomerRegister {
     public ArrayList<Customer> getCustomers() {
         return this.customers;
     }
-
-
 }
