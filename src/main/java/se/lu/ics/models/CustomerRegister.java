@@ -63,6 +63,7 @@ public class CustomerRegister {
         Customer customer = this.findCustomer(customerId);
         if (customer != null) {
             customer.setCreditCard(creditCard);
+            creditCard.setHolder(customer);
         }
     }
 
