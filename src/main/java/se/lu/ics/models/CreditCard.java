@@ -3,7 +3,7 @@ package se.lu.ics.models;
 public class CreditCard {
     private String number;
     private String type;
-    private Customer customer;
+    private Customer holder;
 
     public CreditCard(String number, String type) {
         this.number = number;
@@ -26,11 +26,11 @@ public class CreditCard {
         this.type = type;
     } 
 
-    public Customer getCustomer() {
-        return this.customer;
+    public Customer getHolder() {
+        return this.holder;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setHolder(Customer customer) {
+        this.holder = customer;
     }
 }
