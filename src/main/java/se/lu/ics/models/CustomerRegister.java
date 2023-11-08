@@ -56,6 +56,7 @@ public class CustomerRegister {
 
     /*
      * Sets the credit card of the customer with the given customerId, if such a customer exists.
+     * And sets the holder of the credit card to the customer.
      * @param customerId The id of the customer to set the credit card of.
      * @param creditCard The new credit card of the customer.
      */
