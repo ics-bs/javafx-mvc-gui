@@ -10,7 +10,14 @@ module javafx.gui.lab {
      * to access the public classes and interfaces within this package.
      */
     exports se.lu.ics;
-    exports se.lu.ics.controllers;
+    
+    /*
+     * Open the 'se.lu.ics.controllers' package, allowing other modules
+     * to access the public classes and interfaces within this package.
+     * This is necessary because the JavaFX runtime will need to
+     * create instances of the classes in this package.
+     */
+    opens se.lu.ics.controllers to javafx.fxml;
 
     /* 
      * Declare that this module requires the 'javafx.fxml' module to function. 
