@@ -41,6 +41,8 @@ public class MainViewController {
 
         Customer customer = new Customer(customerId, name);
 
+        customerRegister.addCustomer(customer);
+
         if(radioButtonHasCard.isSelected()) {
             String cardNumber = textFieldCardNumber.getText();
             String cardType = textFieldCardType.getText();
