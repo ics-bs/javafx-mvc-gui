@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import se.lu.ics.controllers.MainViewController;
 import se.lu.ics.models.CustomerRegister;
 
-public class Main extends Application {
+public class App extends Application {
 
     // The main method is the entry point of any Java application. For JavaFX applications, 
     // it should call the launch() method, which in turn calls the start() method
