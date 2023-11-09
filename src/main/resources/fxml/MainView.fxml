@@ -29,14 +29,19 @@
                    layoutY="110.0" />
 
         <!-- Credit Card Information Section -->
+        <fx:define>
+            <ToggleGroup fx:id="cardToggleGroup" />
+       </fx:define>
         <RadioButton fx:id="radioButtonHasCard"
                      layoutX="170.0" 
                      layoutY="160.0" 
-                     text="Has card" />
+                     text="Has card"
+                     toggleGroup="$cardToggleGroup" />
         <RadioButton fx:id="radioButtonNoCard"
                      layoutX="170.0" 
                      layoutY="190.0" 
-                     text="No card" />
+                     text="No card"
+                     toggleGroup="$cardToggleGroup" />
         <Label fx:id="labelCardNumber" 
                layoutX="55.0" 
                layoutY="240.0" 
