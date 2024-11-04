@@ -5,13 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import se.lu.ics.models.CreditCard;
+import se.lu.ics.models.AppModel;
 import se.lu.ics.models.Customer;
-import se.lu.ics.models.CustomerRegister;
+import se.lu.ics.models.CreditCard;
+
 
 public class MainViewController {
 
-    private CustomerRegister customerRegister;
+    private AppModel appModel;
+    private AppController appController;
 
     @FXML
     private TextField textFieldCustomerId;
@@ -41,7 +43,7 @@ public class MainViewController {
 
         Customer customer = new Customer(customerId, name);
 
-        customerRegister.addCustomer(customer);
+        appModel.getCustomerRegister().addCustomer(customer);
 
         if(radioButtonHasCard.isSelected()) {
             String cardNumber = textFieldCardNumber.getText();
@@ -62,12 +64,11 @@ public class MainViewController {
         labelResponse.setText(response);
     }
 
-
     @FXML
     public void handleButtonCustomerFindAction(ActionEvent event) {
         String customerId = textFieldCustomerId.getText();
 
-        Customer foundCustomer = customerRegister.findCustomer(customerId);
+        Customer foundCustomer = appModel.getCustomerRegister().findCustomer(customerId);
 
         if(foundCustomer != null) {
             String response = "Customer found: " + foundCustomer.getName();
@@ -96,7 +97,7 @@ public class MainViewController {
     public void handleButtonCustomerDeleteAction(ActionEvent event) {
         String customerId = textFieldCustomerId.getText();
 
-        customerRegister.removeCustomer(customerId);
+        appModel.getCustomerRegister().removeCustomer(customerId);
 
         String response = "Customer deleted";
 
@@ -108,14 +109,18 @@ public class MainViewController {
         String customerId = textFieldCustomerId.getText();
         String name = textFieldCustomerName.getText();
 
-        customerRegister.setCustomerName(customerId, name);
+        appModel.getCustomerRegister().setCustomerName(customerId, name);
 
         String response = "Customer name changed";
 
         labelResponse.setText(response);
     }
 
-    public void setCustomerRegister(CustomerRegister customerRegister) {
-        this.customerRegister = customerRegister;
+    public void setAppModel(AppModel appModel) {
+        this.appModel = appModel;
+    }
+
+    public void setAppController(AppController appController) {
+        this.appController = appController;
     }
 }

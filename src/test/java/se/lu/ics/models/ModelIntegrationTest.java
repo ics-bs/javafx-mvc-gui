@@ -4,8 +4,11 @@ public class ModelIntegrationTest {
 
     public static void main(String[] args) {
 
-        // Create an instance of the CustomerRegister class.
-        CustomerRegister register = new CustomerRegister();
+        // Create an instance of the AppModel class.
+        AppModel model = new AppModel();
+
+        // Retrieve the CustomerRegister from the model.
+        CustomerRegister register = model.getCustomerRegister();
 
         // Create two instances of the Customer class.
         Customer customer1 = new Customer("C1", "Bob Jones");
